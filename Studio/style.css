@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #edf6f9, #dceef2);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  background-color: #a8dadc;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  font-size: 48px; 
+  color: #1d3557;
+}
+
+.bloco {
+  max-width: 900px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+}
+
+.busca {
+  margin-bottom: 30px;
+}
+
+.busca label {
+  font-weight: bold;
+  color: #264653;
+  font-size: 19px; 
+}
+
+.caixa {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.caixa input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px; 
+}
+
+.caixa input:focus {
+  border-color: #457b9d;
+  outline: none;
+}
+
+.caixa button {
+  padding: 10px 20px;
+  background-color: #457b9d;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.caixa button:hover {
+  background-color: #1d3557;
+}
+
+.resultado {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px dashed #aaa;
+  border-radius: 8px;
+  background-color: #f1faee;
+}
+
+.imagens {
+  margin-top: 40px;
+}
+
+.imagens h2 {
+  font-size: 32px; 
+  color: #1d3557;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.galeria {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  justify-content: center;
+}
+
+.galeria img {
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.textos-criador {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  max-width: 550px;
+}
+
+.info-criador,
+.info-criador2 {
+  background-color: #e9f5f2;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.info-criador h4,
+.info-criador2 h4 {
+  color: #333;
+  font-size: 16px; 
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+  background-color: #a8dadc;
+  border-radius: 10px;
+  color: #1d3557;
+}
