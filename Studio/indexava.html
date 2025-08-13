@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliação de Filme</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .form-avaliacao {
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.08);
+    }
+
+    .form-avaliacao h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1d3557;
+    }
+
+    .form-avaliacao label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #264653;
+    }
+
+    .form-avaliacao input,
+    .form-avaliacao textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .form-avaliacao textarea {
+      resize: vertical;
+    }
+
+    .rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      margin-top: 6px;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      font-size: 28px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .rating input:checked ~ label,
+    .rating label:hover,
+    .rating label:hover ~ label {
+      color: gold;
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .botoes button {
+      padding: 12px 20px;
+      background-color: #457b9d;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      flex: 1;
+      margin: 0 5px;
+      transition: background 0.3s;
+    }
+
+    .botoes button:hover {
+      background-color: #1d3557;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Avaliação de Filme</h1>
+  </header>
+
+  <main>
+    <form class="form-avaliacao">
+      <h2>Deixe sua opinião</h2>
+
+      <label for="titulo">Título do Filme:</label>
+      <input type="text" id="titulo" name="titulo" placeholder="Digite o título do filme">
+
+      <label>Nota:</label>
+      <div class="rating">
+        <input type="radio" id="star5" name="nota" value="5"><label for="star5">★</label>
+        <input type="radio" id="star4" name="nota" value="4"><label for="star4">★</label>
+        <input type="radio" id="star3" name="nota" value="3"><label for="star3">★</label>
+        <input type="radio" id="star2" name="nota" value="2"><label for="star2">★</label>
+        <input type="radio" id="star1" name="nota" value="1"><label for="star1">★</label>
+      </div>
+
+      <label for="comentario">Comentário:</label>
+      <textarea id="comentario" name="comentario" rows="4" placeholder="Escreva sua opinião..."></textarea>
+
+      <label for="nome">Seu Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+      <div class="botoes">
+        <button type="submit">Enviar</button>
+        <button type="reset" id="limpar">Limpar</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>Site não oficial.</p>
+  </footer>
+
+  <script>
+    function salvarNoSessionStorage(campo, valor) {
+      sessionStorage.setItem(campo, valor);
+    }
+
+    const campos = ["titulo", "comentario", "nome"];
+
+    campos.forEach(id => {
+      const elemento = document.getElementById(id);
+      elemento.addEventListener("input", () => {
+        salvarNoSessionStorage(id, elemento.value);
+      });
+      const valorSalvo = sessionStorage.getItem(id);
+      if (valorSalvo) elemento.value = valorSalvo;
+    });
+
+    document.querySelectorAll('input[name="nota"]').forEach(radio => {
+      radio.addEventListener("change", () => {
+        salvarNoSessionStorage("nota", radio.value);
+      });
+    });
+
+    const notaSalva = sessionStorage.getItem("nota");
+    if (notaSalva) {
+      document.querySelector(`input[name="nota"][value="${notaSalva}"]`).checked = true;
+    }
+
+    document.getElementById("limpar").addEventListener("click", () => {
+      sessionStorage.clear();
+    });
+
+    document.querySelector(".form-avaliacao").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Avaliação enviada com sucesso!");
+    });
+  </script>
+</body>
+</html>

@@ -37,3 +37,31 @@ document.getElementById("buscar").addEventListener("click", () => {
       resultado.innerHTML = "Erro: " + error.message;
     });
 });
+
+function mudarTema(tema) {
+  document.body.className = tema;
+  localStorage.setItem("temaSalvo", tema);
+}
+
+window.onload = function() {
+  let tema = localStorage.getItem("temaSalvo");
+  if (tema) {
+    document.body.className = tema;
+  }
+};
+
+const btnTema = document.getElementById("btnTema");
+const opcoesTema = document.getElementById("opcoesTema");
+
+btnTema.addEventListener("click", function() {
+  opcoesTema.classList.toggle("oculto");
+  btnTema.textContent = opcoesTema.classList.contains("oculto") ? "Tema ▾" : "Tema ▲";
+});
+
+document.addEventListener("click", function(event) {
+  const menu = document.querySelector(".menu-tema");
+  if (!menu.contains(event.target)) {
+    opcoesTema.classList.add("oculto");
+    btnTema.textContent = "Tema ▾";
+  }
+});

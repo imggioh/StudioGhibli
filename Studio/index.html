@@ -9,6 +9,17 @@
 <body>
   <header>
     <h1>Studio Ghibli</h1>
+
+    <nav class="menu-tema">
+      <button id="btnTema">Tema ▾</button>
+      <ul id="opcoesTema" class="oculto">
+        <li onclick="mudarTema('claro')">Claro</li>
+        <li onclick="mudarTema('escuro')">Escuro</li>
+      </ul>
+    </nav>
+      <nav class="menu-avaliacao">
+      <a href="indexava.html" class="btn-avaliacao">Avaliar Filme</a>
+    </nav>
   </header>
 
   <main class="bloco">
@@ -20,10 +31,8 @@
       </div>
     </section>
 
-    <section id="resultado" class="resultado">
-    </section>
+    <section id="resultado" class="resultado"></section>
 
-    <!-- Seção do criador -->
     <section class="imagens">
       <h2>Hayao Miyazaki</h2>
       <div class="galeria">

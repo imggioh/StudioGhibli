@@ -17,7 +17,7 @@ body {
 header {
   background-color: #a8dadc;
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px 20px 20px;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -25,6 +25,67 @@ header {
 header h1 {
   font-size: 48px; 
   color: #1d3557;
+}
+
+
+.menu-tema {
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.menu-tema button {
+  background-color: #457b9d;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.menu-tema button:hover {
+  background-color: #1d3557;
+}
+
+.menu-tema ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #f1faee;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.menu-tema ul li {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #1d3557;
+}
+
+.menu-tema ul li:hover {
+  background-color: #a8dadc;
+}
+
+.oculto {
+  display: none;
+}
+
+body.escuro .menu-tema ul {
+  background-color: #1d1d1d;
+}
+
+body.escuro .menu-tema ul li {
+  color: white;
+}
+
+body.escuro .menu-tema ul li:hover {
+  background-color: #333;
 }
 
 .bloco {
@@ -139,4 +200,32 @@ footer {
   background-color: #a8dadc;
   border-radius: 10px;
   color: #1d3557;
+} 
+
+body.claro {
+  background-color: white;
+  color: black;
+}
+
+body.escuro {
+  background-color: #121212;
+  color: white;
+}
+.menu-avaliacao {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.btn-avaliacao {
+  background-color: #457b9d;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-avaliacao:hover {
+  background-color: #1d3557;
 }
