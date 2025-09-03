@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Busca Ghibli</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Studio Ghibli</h1>
+
+    <nav class="menu-tema">
+      <button id="btnTema">Tema ▾</button>
+      <ul id="opcoesTema" class="oculto">
+        <li onclick="mudarTema('claro')">Claro</li>
+        <li onclick="mudarTema('escuro')">Escuro</li>
+      </ul>
+    </nav>
+      <nav class="menu-avaliacao">
+      <a href="indexava.html" class="btn-avaliacao">Avaliar Filme</a>
+    </nav>
+  </header>
+
+  <main class="bloco">
+    <section class="busca">
+      <label for="filme">Digite o nome do filme:</label>
+      <div class="caixa">
+        <input type="text" id="filme" placeholder="Ex: Ponyo" />
+        <button id="buscar">Buscar</button>
+      </div>
+    </section>
+
+    <section id="resultado" class="resultado"></section>
+
+    <section class="imagens">
+      <h2>Hayao Miyazaki</h2>
+      <div class="galeria">
+        <img src="criador.jpg" alt="Hayao Miyazaki" />
+        <div class="textos-criador">
+          <div class="info-criador">
+            <h4>
+              Hayao Miyazaki é um animador, cineasta, roteirista, escritor e artista de mangá japonês. É cofundador do Studio Ghibli, uma companhia de cinema e animação, e conquistou reconhecimento e aclamação internacional pela qualidade de seus vários longas-metragens de animação, os quais normalmente escreve e dirige. É amplamente considerado um dos principais nomes da indústria de animação japonesa.
+            </h4>
+          </div>
+          <div class="info-criador2">
+            <h4>
+              As obras de Miyazaki se destacam por temas como a relação entre humanidade, natureza e tecnologia, a valorização da vida tradicional, da arte e da ética pacifista. Suas protagonistas costumam ser jovens mulheres fortes, e os antagonistas, moralmente complexos. Seus filmes foram amplamente premiados, e ele recebeu um Oscar Honorário em 2014 por sua contribuição à animação.
+            </h4>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Site não oficial.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
