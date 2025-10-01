@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="preload" href="style.css" as="style">
+<link rel="preload" href="script.js" as="script">
+<link rel="prefetch" href="indexava.html">
+<link rel="dns-prefetch" href="//vlibras.gov.br">
+<link rel="stylesheet" href="style.css" />
+
+</head>
+<body class="claro">
+
+   <a class="skip-nav-link" href="#main">Pular para o conteúdo principal</a>
+
+  <header role="banner">
+    <h1>Studio Ghibli</h1>
+
+    <nav class="menutema" role="navigation" aria-label="Troca de tema do site">
+      <button id="btnTema" aria-haspopup="true" aria-expanded="false">Tema ▾</button>
+      <ul id="opcoesTema" class="oculto" role="menu">
+        <li role="menuitem" onclick="mudarTema('claro')">Claro</li>
+        <li role="menuitem" onclick="mudarTema('escuro')">Escuro</li>
+      </ul>
+    </nav>
+
+    <nav class="avaliacao" role="navigation" aria-label="Avaliação de filmes">
+      <a href="indexava.html" class="btn-avaliacao">Avaliar filme selecionado</a>
+    </nav>
+  </header>
+
+  <main id="principal" role="main" class="bloco">
+
+    <section class="busca">
+      <h2>Buscar Filme</h2>
+      <label for="filme">Digite o nome do filme:</label>
+      <div class="caixa">
+        <input type="text" id="filme" placeholder="Ex: Ponyo" aria-describedby="instrucaoFilme" />
+        <button id="buscar">Buscar</button>
+      </div>
+      <small id="instrucaoFilme">Digite o nome completo do filme que deseja buscar.</small>
+    </section>
+
+    <section id="resultado" class="resultado" aria-live="polite" role="status">
+      <h2>Resultados da busca</h2>
+    </section>
+
+    <section class="imagens">
+      <div class="galeria">
+        <img src="criador.jpg" alt="Hayao Miyazaki" />
+        <div class="textoscriador">
+          <div class="infocriador">
+            <p> Hayao Miyazaki é um animador, cineasta, roteirista, escritor e artista de mangá japonês. É cofundador do Studio Ghibli, uma companhia de cinema e animação, e conquistou reconhecimento e aclamação internacional pela qualidade de seus vários longas-metragens de animação, os quais normalmente escreve e dirige. É amplamente considerado um dos principais nomes da indústria de animação japonesa..</p>
+          </div>
+          <div class="infocriador2">
+            <p>As obras de Miyazaki se destacam por temas como a relação entre humanidade, natureza e tecnologia, a valorização da vida tradicional, da arte e da ética pacifista. Suas protagonistas costumam ser jovens mulheres fortes, e os antagonistas, moralmente complexos. Seus filmes foram amplamente premiados, e ele recebeu um Oscar Honorário em 2014 por sua contribuição à animação.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <p>Site não oficial.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>
