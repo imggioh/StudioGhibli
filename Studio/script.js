@@ -65,3 +65,27 @@ document.addEventListener("click", function(event) {
     btnTema.textContent = "Tema ▾";
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  if ("Notification" in window) {
+    // Pede permissão para notificações assim que a página carrega
+    Notification.requestPermission().then(permission => {
+      if (permission === "granted") {
+        console.log("🔔 Permissão concedida!");
+
+        // Dispara a notificação a cada 5 segundos
+        setInterval(() => {
+          new Notification("Aviso", {
+            body: "Ghibli News - Confira os filmes mágicos!",
+            icon: "/studiog.png" // caminho para o ícone do seu projeto
+          });
+        }, 5000); // 5000ms = 5 segundos
+      } else {
+        console.log("❌ Permissão negada ou ignorada.");
+      }
+    });
+  } else {
+    console.log("🚫 Este navegador não suporta notificações.");
+  }
+});
+
